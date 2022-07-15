@@ -57,16 +57,22 @@ public class Signin extends HttpServlet {
 				
 				per = ctrlLogin.validate(per);
 				
+				 
+				
 				if (per == null) {
 					// Error
 					response.sendRedirect("index.html");
 				}
 				else {
+					request.getSession().invalidate();
 					HttpSession session = request.getSession(true);
 					session.setAttribute("usuario", per);
 					LinkedList<Persona> personas = ctrlLogin.getAll();
 					session.setAttribute("listaPersonas", personas);
 					request.getRequestDispatcher("/menu.jsp").forward(request, response); // redireccionamos de un servlet a un jsp
+					
+					
+					
 				}
 				
 			}

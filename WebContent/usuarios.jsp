@@ -69,15 +69,17 @@
                     				</td>
                     				<td>
                     					<a href="edituser?id=<%=per.getId()%>" class="btn" type="submit">Editar</a><!-- editar -->
-                    					<a href="eliminarUsuario?id=<%=per.getId()%>" class="btn">Eliminar</a><!-- borrar -->
+                    					<a href="eliminarUsuario?id=<%=per.getId()%>" class="btn btn-danger">Eliminar</a><!-- borrar -->
                     				</td>
                     				
                     			</tr>
                     		<% } %>
                     		</tbody>	
-                    </table>	
+                    </table>
+                    </div>
+             	</div>	
              <a href="menu.jsp" class="btn">Volver al menu</a>
-        
+        </div>
 	</div> <!-- /container -->
 	
 </body>

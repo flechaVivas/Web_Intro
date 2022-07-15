@@ -16,20 +16,38 @@
     <link href="style/bootstrap.css" rel="stylesheet">
 
     <% 
-    Persona p = (Persona)session.getAttribute("usuario");
+    Persona p = new Persona();
+    if(session.getAttribute("usuario") == null){
+    	request.getRequestDispatcher("index.html").forward(request, response);
+    } else{
+	    p = (Persona)session.getAttribute("usuario");
+    }
     %>
     
 </head>
 <body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Bienvenido </h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<a href="usuarios.jsp">Administracion de Usuarios</a><br>
+			</div>
+			<div class="col-md-3">
+				<a href="altaUsuario.jsp">Creacion de Usuario</a><br>
+			</div>
+		</div>
+			<br><br>
+			<a href="cerrarsesion" class="btn btn-danger">Cerrar Sesion</a>
+	 
+		</div>
 	
-		<h1>Bienvenido <%=p.getNombre() %></h1>
-		<br>
-		<h3> Menu de Opciones </h3>
-		<br>
-		<a href="usuarios.jsp">Administracion de Usuarios</a><br>
-		<a href="altaUsuario.jsp">Creacion de Usuario</a><br>
+	 	
 		
-		<a href="index.html" class="btn btn-danger">Cerrar Sesion</a>
 		
 
 </body>

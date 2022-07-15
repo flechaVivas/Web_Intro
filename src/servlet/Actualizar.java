@@ -64,7 +64,7 @@ public class Actualizar extends HttpServlet {
 			if (per.isEmpty()) {
 				response.sendRedirect("menu.jsp");
 				
-			}
+			} 
 			else {
 				ctrlLogin.update(per);
 				response.sendRedirect("usuarios.jsp");
